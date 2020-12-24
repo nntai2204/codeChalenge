@@ -42,6 +42,73 @@ public class SearchService {
 			value = myObj.nextLine();
 			tic = ticketsSer.searchTicketsByUrl(value);
 			break;
+		case "external_id":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByExternalId(value);
+			break;
+		case "created_at":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByCreatedAt(value);
+			break;
+		case "type":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByType(value);
+			break;
+		case "subject":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsBySubject(value);
+			break;
+		case "description":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByUrl(value);
+			break;
+		case "priority":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByExternalId(value);
+			break;
+		case "status":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByCreatedAt(value);
+			break;
+		case "submitter_id":
+			System.out.println("Enter Search value");
+			int submitter_id = myObj.nextInt();
+			tic = ticketsSer.searchTicketsBySubmitterId(submitter_id);
+			break;
+		case "assignee_id":
+			System.out.println("Enter Search value");
+			int assignee_id = myObj.nextInt();
+			tic = ticketsSer.searchTicketsByAssigneeId(assignee_id).get(0);
+			break;
+		case "organization_id":
+			System.out.println("Enter Search value");
+			int organization_id = myObj.nextInt();
+			tic = ticketsSer.searchTicketsByOrganizationId(organization_id);
+			break;
+		case "tags":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByTags(value);
+			break;
+		case "due_at":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByDueAt(value);
+			break;
+		case "via":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			tic = ticketsSer.searchTicketsByVia(value);
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -66,6 +133,43 @@ public class SearchService {
 			System.out.println("Enter Search value");
 			value = myObj.nextLine();
 			org = orSer.searchOrganizationsByUrl(value);
+			break;
+		case "external_id":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			org = orSer.searchOrganizationsByExternalId(value);
+			break;
+		case "name":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			org = orSer.searchOrganizationsByName(value);
+			break;
+		case "domain_names":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			org = orSer.searchOrganizationsByDomainNames(value);
+			break;
+		case "created_at":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			org = orSer.searchOrganizationsByCreatedAt(value);
+			break;
+		case "details":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			org = orSer.searchOrganizationsByDetails(value);
+			break;
+		case "shared_tickets":
+			System.out.println("Enter Search value");
+			Boolean share = myObj.nextBoolean();
+			org = orSer.searchOrganizationsBySharedTickets(share);
+			break;
+		case "tags":
+			System.out.println("Enter Search value");
+			value = myObj.nextLine();
+			org = orSer.searchOrganizationsByTags(value);
+			break;
+		default:
 			break;
 		}
 	}

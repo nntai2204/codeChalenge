@@ -81,4 +81,32 @@ public class OrganizationsService {
 	public Organizations searchOrganizationsByUrl(String url) {
 		return this.orList.stream().filter(o -> o.getUrl().equals(url)).findFirst().orElse(null);
 	}
+	
+	public Organizations searchOrganizationsByExternalId(String external_id) {
+		return this.orList.stream().filter(o -> o.getExternal_id().equals(external_id)).findFirst().orElse(null);
+	}
+	
+	public Organizations searchOrganizationsByName(String name) {
+		return this.orList.stream().filter(o -> o.getName().equals(name)).findFirst().orElse(null);
+	}
+	
+	public Organizations searchOrganizationsByDomainNames(String domain_names) {
+		return this.orList.stream().filter(o -> o.getDomain_names().equals(domain_names)).findFirst().orElse(null);
+	}
+	
+	public Organizations searchOrganizationsByCreatedAt(String created_at) {
+		return this.orList.stream().filter(o -> o.getCreated_at().equals(created_at)).findFirst().orElse(null);
+	}
+	
+	public Organizations searchOrganizationsByDetails(String details) {
+		return this.orList.stream().filter(o -> o.getDetails().equals(details)).findFirst().orElse(null);
+	}
+	
+	public Organizations searchOrganizationsBySharedTickets(Boolean shared_tickets) {
+		return this.orList.stream().filter(o -> o.getShared_tickets().equals(shared_tickets)).findFirst().orElse(null);
+	}
+	public Organizations searchOrganizationsByTags(String tags) {
+		return this.orList.stream().filter(o -> o.getTags().contains(tags)).findFirst().orElse(null);
+	}
+
 }

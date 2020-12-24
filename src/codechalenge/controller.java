@@ -6,13 +6,11 @@ import codechalenge.service.SearchService;
 
 public class controller {
 
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		Scanner myObj = new Scanner(System.in); //
 		SearchService serchService = new SearchService();
-		// System.out.println(serchService.findUser().get_id());
 		System.out.println("Type 'quit' to exit at any time, Press 'Enter' to continue\n\n\n");
 		System.out.println("Select search options:");
 		System.out.println("* Press 1 to search");
