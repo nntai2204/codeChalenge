@@ -110,6 +110,10 @@ public class SearchService {
 		default:
 			break;
 		}
+		if(tic != null)
+		{
+			this.getTicketsSer().showTicketDetail(tic);
+		}
 	}
 
 	public void findOrganizations() {
@@ -171,6 +175,9 @@ public class SearchService {
 			break;
 		default:
 			break;
+		}
+		if(org != null) {
+			this.getOrSer().showOrganizationDetail(org);
 		}
 	}
 

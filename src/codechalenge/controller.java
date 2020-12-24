@@ -9,6 +9,7 @@ public class controller {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		@SuppressWarnings("resource")
 		Scanner myObj = new Scanner(System.in); //
 		SearchService serchService = new SearchService();
 		System.out.println("Type 'quit' to exit at any time, Press 'Enter' to continue\n\n\n");
@@ -16,7 +17,7 @@ public class controller {
 		System.out.println("* Press 1 to search");
 		System.out.println("* Press 2 to view a list of searchale fields");
 		System.out.println("* Press 'quit' to exit");
-		String run = myObj.nextLine();
+		String run = "";
 		while (!run.equals("quit")) {
 			run = myObj.nextLine();
 
@@ -26,10 +27,10 @@ public class controller {
 				if (select == 1) {
 					serchService.findUser();
 				}
-				if (select == 1) {
+				if (select == 2) {
 					serchService.findTickets();
 				}
-				if (select == 1) {
+				if (select == 3) {
 					serchService.findOrganizations();
 				}
 			}
