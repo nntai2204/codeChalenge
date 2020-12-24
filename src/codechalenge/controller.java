@@ -12,11 +12,7 @@ public class controller {
 		@SuppressWarnings("resource")
 		Scanner myObj = new Scanner(System.in); //
 		SearchService serchService = new SearchService();
-		System.out.println("Type 'quit' to exit at any time, Press 'Enter' to continue\n\n\n");
-		System.out.println("Select search options:");
-		System.out.println("* Press 1 to search");
-		System.out.println("* Press 2 to view a list of searchale fields");
-		System.out.println("* Press 'quit' to exit");
+		serchService.showMessage();
 		String run = "";
 		while (!run.equals("quit")) {
 			run = myObj.nextLine();
@@ -38,6 +34,8 @@ public class controller {
 				serchService.getuService().searchList();
 				serchService.getTicketsSer().searchList();
 				serchService.getOrSer().searchList();
+				
+				serchService.showMessage();
 			}
 		}
 		System.out.print("finished");

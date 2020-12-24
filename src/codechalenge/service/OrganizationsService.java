@@ -61,7 +61,7 @@ public class OrganizationsService {
 		}
 	}
 
-	public void showOrganizationDetail(Organizations u)
+	public void showOrganizationDetail(Organizations u, String tickeck, String user)
 	{
 		System.out.println("_id                          " + u.get_id());
 		System.out.println("url                          " + u.getUrl());
@@ -72,6 +72,8 @@ public class OrganizationsService {
 		System.out.println("details                      " + u.getDetails());
 		System.out.println("shared_tickets               " + u.getShared_tickets());
 		System.out.println("tags                         " + u.getTags().toString());
+		System.out.println("tickeck Subject              " + tickeck);
+		System.out.println("user Name                    " + user);
 	}
 	
 	public Organizations searchOrganizationsById(int id) {

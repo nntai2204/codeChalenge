@@ -60,7 +60,7 @@ public class TicketsService {
         }
 	}
 	
-	public void showTicketDetail(Tickets u)
+	public void showTicketDetail(Tickets u, String org, String assi, String submi)
 	{
 		System.out.println("_id                          " + u.get_id());
 		System.out.println("alias                        " + u.getUrl());
@@ -78,6 +78,9 @@ public class TicketsService {
 		System.out.println("role                         " + u.getHas_incidents());
 		System.out.println("signature                    " + u.getDue_at());
 		System.out.println("organization_id              " + u.getVia());
+		System.out.println("organization name            " + org);
+		System.out.println("assignee name                " + assi);
+		System.out.println("submitter name               " + submi);
 	}
 	
 	public Tickets searchTicketsById(String id) {

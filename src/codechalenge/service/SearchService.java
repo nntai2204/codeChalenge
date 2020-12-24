@@ -20,6 +20,15 @@ public class SearchService {
 
 	}
 
+	public void showMessage()
+	{
+		System.out.println("\n===================================");
+		System.out.println("Type 'quit' to exit at any time, Press 'Enter' to continue\n\n");
+		System.out.println("Select search options:");
+		System.out.println("* Press 1 to search");
+		System.out.println("* Press 2 to view a list of searchale fields");
+		System.out.println("* Press 'quit' to exit");
+	}
 	public void findTickets() {
 
 		@SuppressWarnings("resource")
@@ -75,7 +84,7 @@ public class SearchService {
 		case "status":
 			System.out.println("Enter Search value");
 			value = myObj.nextLine();
-			tic = ticketsSer.searchTicketsByCreatedAt(value);
+			tic = ticketsSer.searchTicketsByStatus(value);
 			break;
 		case "submitter_id":
 			System.out.println("Enter Search value");
@@ -112,8 +121,16 @@ public class SearchService {
 		}
 		if(tic != null)
 		{
-			this.getTicketsSer().showTicketDetail(tic);
+			System.out.println("\n===============Result===============");
+			Organizations o = this.getOrSer().searchOrganizationsById(tic.getOrganization_id());
+			User assi = this.getuService().searchUserById(tic.getAssignee_id());
+			User submit = this.getuService().searchUserById(tic.getSubmitter_id());
+		
+			this.getTicketsSer().showTicketDetail(tic, o.getName(), assi.getName(), submit.getName());
+		}else {
+			System.out.println("Tickeck Not Found");
 		}
+		this.showMessage();
 	}
 
 	public void findOrganizations() {
@@ -177,8 +194,15 @@ public class SearchService {
 			break;
 		}
 		if(org != null) {
-			this.getOrSer().showOrganizationDetail(org);
+			System.out.println("\n===============Result===============");
+			User u = this.getuService().searchUserByOrganizationId(org.get_id());
+			Tickets t = this.getTicketsSer().searchTicketsByOrganizationId(org.get_id());
+			
+			this.getOrSer().showOrganizationDetail(org, t.getSubject(), u.getName());
+		}else {
+			System.out.println("Organization Not Found");
 		}
+		this.showMessage();
 	}
 
 	public void findUser() {
@@ -291,11 +315,14 @@ public class SearchService {
 			break;
 		}
 		if (user != null) {
+			System.out.println("\n===============Result===============");
 			Organizations userOrgani = this.getOrSer().searchOrganizationsById(user.getOrganization_id());
 			List<Tickets> userTicket = this.getTicketsSer().searchTicketsByAssigneeId(user.get_id());
 			this.getuService().showUserDetail(user, userOrgani.getName(), userTicket);
+		}else {
+			System.out.println("User Not Found");
 		}
-		// return user;
+		this.showMessage();
 	}
 
 	public UserService getuService() {
