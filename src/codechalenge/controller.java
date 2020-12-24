@@ -32,7 +32,6 @@ public class controller {
 				if (select == 1) {
 					serchService.findOrganizations();
 				}
-				// serchService.findUser().get_id();
 			}
 			if (run.equals("2")) {
 				serchService.getuService().searchList();
