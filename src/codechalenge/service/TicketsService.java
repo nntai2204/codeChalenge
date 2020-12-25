@@ -141,7 +141,7 @@ public class TicketsService {
 	}
 
 	public Tickets searchTicketsByDueAt(String due_at) {
-		return this.listTickets.stream().filter(u -> u.getVia().equals(due_at)).findFirst().orElse(null);
+		return this.listTickets.stream().filter(u -> u.getDue_at().equals(due_at)).findFirst().orElse(null);
 	}
 	
 	public Tickets searchTicketsByVia(String via) {
