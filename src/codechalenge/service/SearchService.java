@@ -74,12 +74,12 @@ public class SearchService {
 		case "description":
 			System.out.println("Enter Search value");
 			value = myObj.nextLine();
-			tic = ticketsSer.searchTicketsByUrl(value);
+			tic = ticketsSer.searchTicketsByDescription(value);
 			break;
 		case "priority":
 			System.out.println("Enter Search value");
 			value = myObj.nextLine();
-			tic = ticketsSer.searchTicketsByExternalId(value);
+			tic = ticketsSer.searchTicketsByPriority(value);
 			break;
 		case "status":
 			System.out.println("Enter Search value");
