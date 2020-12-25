@@ -2,7 +2,7 @@
 This program provides human can search for Users, Tickets, and Organizations
 It can search 
 - User by:
-*   _id
+	  _id
 	  url,
 	  external_id,
 	  name,
@@ -22,7 +22,7 @@ It can search
 	  suspended,
 	  role
 - Ticket by:
-*   _id
+ 	  _id
 	  url,
 	  external_id,
 	  created_at,
@@ -39,7 +39,7 @@ It can search
 	  due_at,
 	  via
 - Organizations by:
-*   _id
+ 	  _id
 	  url,
 	  external_id,
 	  name,
