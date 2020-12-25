@@ -50,3 +50,5 @@ It can search
 	  tags
 * For each search action, it can return for one record or null.
 * This program requires the user to input the correct keyword to search.
+* Setup:
+Import this project to Eclipse IDE and click run/debug.
