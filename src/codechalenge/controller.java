@@ -38,6 +38,6 @@ public class controller {
 				serchService.showMessage();
 			}
 		}
-		System.out.print("finished");
+		//System.out.print("finished");
 	}
 }
